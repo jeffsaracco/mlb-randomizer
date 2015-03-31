@@ -1,0 +1,18 @@
+%h1
+  MLB Randomizer
+
+%h2 Teams
+
+%ul
+  - for team in @teams
+    %li= team
+
+
+%h2 Players
+
+%ul
+  - for player in @players
+    %li= player
+
+%a{href: '/randomize'}
+  RANDOMIZE!

@@ -1,0 +1,9 @@
+%h1 Drawing complete
+
+%ul
+  - @player_teams.each do |player_team|
+    %li
+      %h3= player_team[:player]
+      %ul
+        %li= player_team[:al_team]
+        %li= player_team[:nl_team]
