@@ -63,8 +63,8 @@ get '/randomize/:seed' do
   @player_teams = []
 
   al_teams = AL_TEAMS.shuffle(random: Random.new(params[:seed].to_i))
-  nl_teams = NL_TEAMS.shuffle(random: Random.new(params[:seed].to_i))
-  players = PLAYERS.shuffle(random: Random.new(params[:seed].to_i))
+  nl_teams = NL_TEAMS.shuffle(random: Random.new(params[:seed].to_i + 1))
+  players = PLAYERS.shuffle(random: Random.new(params[:seed].to_i + 2))
 
   players.each_with_index do |player, index|
     @player_teams.push( {
