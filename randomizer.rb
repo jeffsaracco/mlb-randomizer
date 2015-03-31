@@ -59,21 +59,19 @@ get '/' do
   haml :index
 end
 
-get '/randomize' do
+get '/randomize/:seed' do
+  @player_teams = []
 
-  al_teams = AL_TEAMS.dup
-  nl_teams = NL_TEAMS.dup
+  al_teams = AL_TEAMS.shuffle(random: Random.new(params[:seed].to_i))
+  nl_teams = NL_TEAMS.shuffle(random: Random.new(params[:seed].to_i))
+  players = PLAYERS.shuffle(random: Random.new(params[:seed].to_i))
 
-  @player_teams = PLAYERS.map do |player|
-    nl_team = nl_teams.sample
-    nl_teams = nl_teams - [nl_team]
-    al_team = al_teams.sample
-    al_teams = al_teams - [al_team]
-    {
+  players.each_with_index do |player, index|
+    @player_teams.push( {
       player: player,
-      nl_team: nl_team,
-      al_team: al_team
-    }
+      nl_team: nl_teams[index],
+      al_team: al_teams[index]
+    })
   end
 
   haml :drawing
