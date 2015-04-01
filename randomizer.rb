@@ -59,12 +59,14 @@ get '/' do
   haml :index
 end
 
-get '/randomize/:seed' do
+get '/randomize' do
   @player_teams = []
 
-  al_teams = AL_TEAMS.shuffle(random: Random.new(params[:seed].to_i))
-  nl_teams = NL_TEAMS.shuffle(random: Random.new(params[:seed].to_i + 1))
-  players = PLAYERS.shuffle(random: Random.new(params[:seed].to_i + 2))
+  seed = Date.today.to_time.to_i
+
+  al_teams = AL_TEAMS.shuffle(random: Random.new(seed))
+  nl_teams = NL_TEAMS.shuffle(random: Random.new(seed + 1))
+  players = PLAYERS.shuffle(random: Random.new(seed + 2))
 
   players.each_with_index do |player, index|
     @player_teams.push( {
