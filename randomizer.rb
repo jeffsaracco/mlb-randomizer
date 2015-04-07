@@ -63,7 +63,9 @@ end
 get '/randomize' do
   @player_teams = []
 
-  seed = (Date.today + 1).to_time.to_i
+  d = Date.today + 1
+
+  seed = Time.new(d.year, d.month, d.day, 0, 0, 0, "-04:00").to_i
 
   al_teams = AL_TEAMS.shuffle(random: Random.new(seed))
   nl_teams = NL_TEAMS.shuffle(random: Random.new(seed + 1))
