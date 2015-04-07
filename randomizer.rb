@@ -1,20 +1,21 @@
 require 'sinatra'
 
 PLAYERS = [
+  'Bobby Wilson',
+  'Cameron Jenness',
+  'Chris DeGaetano',
+  'Daniel Bennett',
+  'Heath Schneider',
+  'Jeff Saracco',
+  'Joe Tano',
+  'Josh Reilly',
+  'Justin Potvin',
+  'Kris DeBonville',
+  'Mark Eicher',
   'Michael Plichta',
   'Paul Vorderis',
-  'Mark Eicher',
-  'Cameron Jenness',
-  'Bobby Wilson',
-  'Daniel Bennett',
-  'Josh Reilly',
-  'Zachary Goldman',
-  'Nicolas de Elia',
-  'John Storck III',
-  'Erik Storck',
-  'Christopher DeGaetano',
-  'Justin Potvin',
-  'Jeff Saracco'
+  'Ryan Thomas',
+  'Zachary Goldman'
 ]
 
 NL_TEAMS = [
