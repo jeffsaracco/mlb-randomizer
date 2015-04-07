@@ -46,9 +46,9 @@ AL_TEAMS = [
   'Cleveland Indians',
   'Detroit Tigers',
   'Kansas City Royals',
+  'Los Angeles Angels of Anaheim',
   'Minnesota Twins',
   'Houston Astros',
-  'Los Angeles Angels of Anaheim',
   'Oakland Athletics',
   'Seattle Mariners',
   'Texas Rangers'
